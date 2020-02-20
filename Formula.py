@@ -12,7 +12,10 @@ class Formula:
         atoms_indecies = np.array(self.formula_pos[0][1])
         connectivs = np.array(self.conectivs_pos[0])
         connectivs_indecies = np.array(self.conectivs_pos[1])
-        formula_length = max(max(connectivs_indecies),max(atoms_indecies))+1
+        if len(connectivs)==0:
+            formula_length=1
+        else:
+            formula_length = max(max(connectivs_indecies),max(atoms_indecies))+1
         formula_text = ''
         for i in range(formula_length):
             if i in atoms_indecies:
@@ -28,7 +31,11 @@ class Formula:
         formulas_indecies = np.array(self.formula_pos[0][1])
         connectivs = np.array(self.conectivs_pos[0])
         connectivs_indecies = np.array(self.conectivs_pos[1])
-        formula_length = max(max(connectivs_indecies),max(formulas_indecies))+1
+        if len(connectivs) == 0:
+            formula_length = 1
+        else:
+            formula_length = max(max(connectivs_indecies), max(formulas_indecies)) + 1
+
         formula_text = ''
         for i in range(formula_length):
             if i in formulas_indecies:
@@ -44,7 +51,10 @@ class Formula:
         atoms_indecies = np.array(self.formula_pos[0][1])
         connectivs = np.array(self.conectivs_pos[0])
         connectivs_indecies = np.array(self.conectivs_pos[1])
-        formula_length = max(max(connectivs_indecies),max(atoms_indecies))+1
+        if len(connectivs) == 0:
+            formula_length = 1
+        else:
+            formula_length = max(max(connectivs_indecies), max(atoms_indecies)) + 1
         formula_text = ''
 
         for i in range(formula_length):
