@@ -1,5 +1,6 @@
 import numpy as np
 import LogicalSymbols as LS
+from Sequence import Sequence
 
 l_not = LS.l_not
 l_or = LS.l_or
@@ -17,10 +18,19 @@ class Inference:
 
 
     def print_inference(self):
-        symolic_length = max(len(self.upper_sequence.text_sequence()),len(self.lower_sequence.text_sequence()))
-        print(self.upper_sequence.text_sequence())
-        print(int(0.61*symolic_length)*'—')
-        print(self.lower_sequence.text_sequence())
+        if isinstance(self.upper_sequence,Sequence):
+            symbolic_length = max(len(self.upper_sequence.text_sequence()),len(self.lower_sequence.text_sequence()))
+            print(self.upper_sequence.text_sequence())
+            print(int(0.61*symbolic_length)*'—')
+            print(self.lower_sequence.text_sequence())
+        else:
+            first_upper = self.upper_sequence[0]
+            second_upper = self.upper_sequence[1]
+            print(first_upper.text_sequence(), end='\t')
+            print(second_upper.text_sequence())
+            symbolic_length = len(first_upper.text_sequence()) + len(second_upper.text_sequence())
+            print(int(0.61 * symbolic_length) * '—')
+            print(self.lower_sequence.text_sequence())
 
     def check_weakening_left(self):
         is_left = np.array_equal(self.lower_sequence.antecedent[1:], self.upper_sequence.antecedent)
@@ -127,3 +137,75 @@ class Inference:
         if A_and_B.conectivs_pos[0][0]==l_and and A_and_B.conectivs_pos[1][0] == 1:
             return True
         return False
+
+    def check_or_left(self):
+        if isinstance(self.upper_sequence,Sequence):
+
+            return False
+
+        first_upper = self.upper_sequence[0]
+        second_upper = self.upper_sequence[1]
+        lower = self.lower_sequence
+
+        if first_upper.antecedent[1:].all() != second_upper.antecedent[1:].all():
+            return False
+
+        if first_upper.succedent.all() != second_upper.succedent.all():
+            return False
+
+        if first_upper.antecedent[1:].all() != lower.antecedent[1:].all():
+            return False
+
+        if first_upper.succedent.all() != lower.succedent.all():
+            return False
+
+        A = first_upper.antecedent[0]
+        B = second_upper.antecedent[0]
+        A_or_B = lower.antecedent[0]
+
+        if A!= A_or_B.formula_pos[0][0][0]:
+            return False
+
+        if B != A_or_B.formula_pos[0][0][1]:
+            return False
+
+        if A_or_B.conectivs_pos[0][0] != l_or:
+            return False
+
+        return True
+
+    def check_implication_left(self):
+        if isinstance(self.upper_sequence,Sequence):
+            return False
+
+        first_upper = self.upper_sequence[0]
+        second_upper = self.upper_sequence[1]
+        lower = self.lower_sequence
+
+        if first_upper.antecedent.all() != second_upper.antecedent[1:].all():
+            return False
+
+        if first_upper.succedent[:-1].all() != second_upper.succedent.all():
+            return False
+
+        if first_upper.antecedent.all() != lower.antecedent[1:].all():
+            return False
+
+        if first_upper.succedent[:-1].all() != lower.succedent.all():
+            return False
+
+        A = first_upper.succedent[-1]
+        B = second_upper.antecedent[0]
+
+        A_imp_B = lower.antecedent[0]
+
+        if A!= A_imp_B.formula_pos[0][0][0]:
+            return False
+
+        if B != A_imp_B.formula_pos[0][0][1]:
+            return False
+
+        if A_imp_B.conectivs_pos[0][0] != l_implication:
+            return False
+
+        return True

@@ -13,7 +13,7 @@ l_inference = LS.l_inference
 
 
 atom1 = Atom(0, " I'm Batman ", True)
-"""
+
 print('Preposition 1:')
 print(atom1.text)
 
@@ -22,6 +22,8 @@ formula1 = Formula(0, True, [[atom1], [0]], [[], []])
 
 formula2 = Formula(1, True, [[formula1, formula1], [0, 2]], [[l_and], [1]])
 
+formula3 = Formula(1, True, [[formula1, formula2], [0, 2]], [[l_implication], [1]])
+
 print('Formula 1:')
 formula1.print_formula()
 
@@ -29,15 +31,31 @@ print('Formula 2:')
 formula2.print_formula()
 
 
-sequence1 = Sequence(0, True, [formula1, formula1], [formula1])
-sequence2 = Sequence(1, True, [formula2], [formula1])
+sequence10 = Sequence(0, True, [formula1, formula1], [formula1, formula1])
+sequence11 = Sequence(2, True, [formula2, formula1, formula1], [formula1])
+
+sequence2 = Sequence(1, True, [formula3, formula1, formula1], [formula1])
 
 print('Inference 1:')
-inference1 = Inference(sequence1, sequence2)
+inference1 = Inference([sequence10, sequence11], sequence2)
 inference1.print_inference()
 
 print('Correct: ', end='')
-print(inference1.check_and_right())
+print(inference1.check_implication_left())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 """
 atom2 = Atom(1, " I'm Superman ", True)
 print('Preposition 2:')
@@ -51,3 +69,4 @@ sequence4 = Sequence(3, False, [formula4, formula4], [formula4, formula3])
 inference2 = Inference(sequence3, sequence4)
 inference2.print_inference()
 print(inference2.check_weakening_right())
+"""
