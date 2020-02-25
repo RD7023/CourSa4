@@ -1,3 +1,4 @@
+# logical symbols for easier implementation
 l_not = '¬'
 l_or = '∨'
 l_and = '∧'

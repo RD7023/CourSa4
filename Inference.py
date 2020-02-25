@@ -10,12 +10,10 @@ l_implication = LS.l_implication
 l_inference = LS.l_inference
 
 
-
 class Inference:
     def __init__(self,upper_sequence,lower_sequence):
         self.upper_sequence = upper_sequence
         self.lower_sequence = lower_sequence
-
 
     def print_inference(self):
         if isinstance(self.upper_sequence,Sequence):
@@ -40,6 +38,7 @@ class Inference:
             return True
         else:
             return False
+
     def check_weakening_right(self):
         is_left = np.array_equal(self.lower_sequence.antecedent, self.upper_sequence.antecedent)
         is_right = np.array_equal(self.upper_sequence.succedent, self.lower_sequence.succedent[:-1])
@@ -50,30 +49,44 @@ class Inference:
             return False
 
     def check_contraction_left(self):
-        if self.upper_sequence.antecedent[0]!=self.upper_sequence.antecedent[1]:
+        if self.upper_sequence.antecedent[0] != self.upper_sequence.antecedent[1]:
             return False
         else:
-            if np.array_equal(self.upper_sequence.antecedent[1:],self.lower_sequence.antecedent):
+            if np.array_equal(self.upper_sequence.antecedent[1:], self.lower_sequence.antecedent):
                 23
             else:
                 return False
 
-        if np.array_equal(self.upper_sequence.succedent,self.lower_sequence.succedent):
+        if np.array_equal(self.upper_sequence.succedent, self.lower_sequence.succedent):
+            return True
+        else:
+            return False
+
+    def check_contraction_right(self):
+        if self.upper_sequence.succedent[-1] != self.upper_sequence.succedent[-2]:
+            return False
+        else:
+            if np.array_equal(self.upper_sequence.succedent[:-1], self.lower_sequence.succedent):
+                32
+            else:
+                return False
+
+        if np.array_equal(self.upper_sequence.antecedent, self.lower_sequence.antecedent):
             return True
         else:
             return False
 
     def check_exchange_left(self):
-        if len(self.upper_sequence.antecedent)!=len(self.lower_sequence.antecedent):
+        if len(self.upper_sequence.antecedent) != len(self.lower_sequence.antecedent):
             return False
-        if np.array_equal(self.upper_sequence.succedent,self.lower_sequence.succedent):
+        if np.array_equal(self.upper_sequence.succedent, self.lower_sequence.succedent):
             23
         else:
             return False
 
         is_exchange = False
         for i in range(len(self.upper_sequence.antecedent)-2):
-            if self.upper_sequence.antecedent[i] == self.lower_sequence.antecedent[i+1] and  self.upper_sequence.antecedent[i+1] == self.lower_sequence.antecedent[i]:
+            if self.upper_sequence.antecedent[i] == self.lower_sequence.antecedent[i+1] and self.upper_sequence.antecedent[i+1] == self.lower_sequence.antecedent[i]:
                 is_exchange = True
 
         upper_left_subarray = self.upper_sequence.antecedent[0:i]
@@ -90,25 +103,73 @@ class Inference:
         else:
             return False
 
+    def check_exchange_right(self):
+        if len(self.upper_sequence.succedent)!=len(self.lower_sequence.succedent):
+            return False
+        if np.array_equal(self.upper_sequence.antecedent,self.lower_sequence.antecedent):
+            32
+        else:
+            return False
+
+        is_exchange = False
+        for i in range(len(self.upper_sequence.succedent)-2):
+            if self.upper_sequence.succedent[i] == self.lower_sequence.succedent[i+1] and  self.upper_sequence.succedent[i+1] == self.lower_sequence.succedent[i]:
+                is_exchange = True
+
+        upper_left_subarray = self.upper_sequence.succedent[0:i]
+        lower_left_subarray = self.lower_sequence.succedent[0:i]
+
+        upper_right_subarray = self.upper_sequence.succedent[i+2:]
+        lower_right_subarray = self.lower_sequence.succedent[i+2:]
+
+        is_left_subarray = np.array_equal(upper_left_subarray, lower_left_subarray)
+        is_right_subarray = np.array_equal(upper_right_subarray, lower_right_subarray)
+
+        if is_left_subarray and is_right_subarray and is_exchange:
+            return True
+        else:
+            return False
+
     def check_not_left(self):
-        if len(self.upper_sequence.antecedent)+1!=len(self.lower_sequence.antecedent):
+        if len(self.upper_sequence.antecedent)+1 != len(self.lower_sequence.antecedent):
             return False
-        if len(self.upper_sequence.succedent)!=len(self.lower_sequence.succedent)+1:
+        if len(self.upper_sequence.succedent) != len(self.lower_sequence.succedent)+1:
             return False
-        if not np.array_equal(self.upper_sequence.antecedent,self.lower_sequence.antecedent[1:]):
+        if not np.array_equal(self.upper_sequence.antecedent, self.lower_sequence.antecedent[1:]):
             return False
-        if not np.array_equal(self.upper_sequence.succedent[:-1],self.lower_sequence.succedent):
+        if not np.array_equal(self.upper_sequence.succedent[:-1], self.lower_sequence.succedent):
             return False
 
         A = self.upper_sequence.succedent[-1]
         A_not = self.lower_sequence.antecedent[0]
 
-        if len(A.conectivs_pos[0])>0 and A.conectivs_pos[0][0] == l_not:
-            if A.formula_pos[0][0]==A_not.formula_pos[0][0]:
+        if len(A.connectives_pos[0]) > 0 and A.connectives_pos[0][0] == l_not:
+            if A.formula_pos[0][0] == A_not.formula_pos[0][0]:
                 return True
         else:
+            if A_not.connectives_pos[0][0] == l_not:
+                if A_not.formula_pos[0][0] == A.formula_pos[0][0]:
+                    return True
+        return False
 
-            if A_not.conectivs_pos[0][0] == l_not:
+    def check_not_right(self):
+        if len(self.upper_sequence.antecedent) != len(self.lower_sequence.antecedent)+1:
+            return False
+        if len(self.upper_sequence.succedent)+1 != len(self.lower_sequence.succedent):
+            return False
+        if not np.array_equal(self.upper_sequence.succedent, self.lower_sequence.succedent[1:]):
+            return False
+        if not np.array_equal(self.upper_sequence.succedent[:-1], self.lower_sequence.succedent):
+            return False
+
+        A = self.upper_sequence.antecedent[0]
+        A_not = self.lower_sequence.succedent[-1]
+
+        if len(A.connectives_pos[0]) > 0 and A.connectives_pos[0][0] == l_not:
+            if A.formula_pos[0][0] == A_not.formula_pos[0][0]:
+                return True
+        else:
+            if A_not.connectives_pos[0][0] == l_not:
                 if A_not.formula_pos[0][0] == A.formula_pos[0][0]:
                     return True
         return False
@@ -134,7 +195,7 @@ class Inference:
             return False
         if B!=A_and_B.formula_pos[0][0][1]:
             return False
-        if A_and_B.conectivs_pos[0][0]==l_and and A_and_B.conectivs_pos[1][0] == 1:
+        if A_and_B.connectives_pos[0][0]==l_and and A_and_B.connectives_pos[1][0] == 1:
             return True
         return False
 
@@ -169,7 +230,7 @@ class Inference:
         if B != A_or_B.formula_pos[0][0][1]:
             return False
 
-        if A_or_B.conectivs_pos[0][0] != l_or:
+        if A_or_B.connectives_pos[0][0] != l_or:
             return False
 
         return True
@@ -205,7 +266,7 @@ class Inference:
         if B != A_imp_B.formula_pos[0][0][1]:
             return False
 
-        if A_imp_B.conectivs_pos[0][0] != l_implication:
+        if A_imp_B.connectives_pos[0][0] != l_implication:
             return False
 
         return True
