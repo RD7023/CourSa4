@@ -85,15 +85,15 @@ class Inference:
             return False
 
         is_exchange = False
-        for i in range(len(self.upper_sequence.antecedent)-1):
+        for i in range(len(self.upper_sequence.antecedent)-2):
             if self.upper_sequence.antecedent[i] == self.lower_sequence.antecedent[i+1] and self.upper_sequence.antecedent[i+1] == self.lower_sequence.antecedent[i]:
                 is_exchange = True
 
-        upper_left_subarray = self.upper_sequence.antecedent[0:i]
-        lower_left_subarray = self.lower_sequence.antecedent[0:i]
+            upper_left_subarray = self.upper_sequence.antecedent[0:i]
+            lower_left_subarray = self.lower_sequence.antecedent[0:i]
 
-        upper_right_subarray = self.upper_sequence.antecedent[i+2:]
-        lower_right_subarray = self.lower_sequence.antecedent[i+2:]
+            upper_right_subarray = self.upper_sequence.antecedent[i+2:]
+            lower_right_subarray = self.lower_sequence.antecedent[i+2:]
 
         is_left_subarray = np.array_equal(upper_left_subarray, lower_left_subarray)
         is_right_subarray = np.array_equal(upper_right_subarray, lower_right_subarray)
@@ -112,15 +112,15 @@ class Inference:
             return False
 
         is_exchange = False
-        for i in range(len(self.upper_sequence.succedent)-1):
+        for i in range(len(self.upper_sequence.succedent)-2):
             if self.upper_sequence.succedent[i] == self.lower_sequence.succedent[i+1] and  self.upper_sequence.succedent[i+1] == self.lower_sequence.succedent[i]:
                 is_exchange = True
 
-        upper_left_subarray = self.upper_sequence.succedent[0:i]
-        lower_left_subarray = self.lower_sequence.succedent[0:i]
+            upper_left_subarray = self.upper_sequence.succedent[0:i]
+            lower_left_subarray = self.lower_sequence.succedent[0:i]
 
-        upper_right_subarray = self.upper_sequence.succedent[i+2:]
-        lower_right_subarray = self.lower_sequence.succedent[i+2:]
+            upper_right_subarray = self.upper_sequence.succedent[i+2:]
+            lower_right_subarray = self.lower_sequence.succedent[i+2:]
 
         is_left_subarray = np.array_equal(upper_left_subarray, lower_left_subarray)
         is_right_subarray = np.array_equal(upper_right_subarray, lower_right_subarray)
