@@ -85,7 +85,7 @@ class Inference:
             return False
 
         is_exchange = False
-        for i in range(len(self.upper_sequence.antecedent)-2):
+        for i in range(len(self.upper_sequence.antecedent)-1):
             if self.upper_sequence.antecedent[i] == self.lower_sequence.antecedent[i+1] and self.upper_sequence.antecedent[i+1] == self.lower_sequence.antecedent[i]:
                 is_exchange = True
 
@@ -112,7 +112,7 @@ class Inference:
             return False
 
         is_exchange = False
-        for i in range(len(self.upper_sequence.succedent)-2):
+        for i in range(len(self.upper_sequence.succedent)-1):
             if self.upper_sequence.succedent[i] == self.lower_sequence.succedent[i+1] and  self.upper_sequence.succedent[i+1] == self.lower_sequence.succedent[i]:
                 is_exchange = True
 
