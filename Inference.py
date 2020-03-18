@@ -344,7 +344,7 @@ class Inference:
 
         A = self.upper_sequence.antecedent[0]
         B = self.upper_sequence.succedent[-1]
-        A_imp_b = self.lower_sequence.succedent[-1]
+        A_imp_B = self.lower_sequence.succedent[-1]
 
         if A != A_imp_B.formula_pos[0][0][0]:
             return False
