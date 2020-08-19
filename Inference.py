@@ -157,9 +157,9 @@ class Inference:
             return False
         if len(self.upper_sequence.succedent)+1 != len(self.lower_sequence.succedent):
             return False
-        if not np.array_equal(self.upper_sequence.succedent, self.lower_sequence.succedent[1:]):
+        if not np.array_equal(self.upper_sequence.succedent, self.lower_sequence.succedent[:-1]):
             return False
-        if not np.array_equal(self.upper_sequence.succedent[:-1], self.lower_sequence.succedent):
+        if not np.array_equal(self.upper_sequence.antecedent[1:], self.lower_sequence.antecedent):
             return False
 
         A = self.upper_sequence.antecedent[0]
@@ -175,15 +175,15 @@ class Inference:
         return False
 
     def check_and_left(self):
-        if len(self.upper_sequence.antecedent)!=len(self.lower_sequence.antecedent)+1:
-
+        if len(self.upper_sequence.antecedent)!=len(self.lower_sequence.antecedent)+1: #???
             return False
+
         if len(self.upper_sequence.succedent)!=len(self.lower_sequence.succedent):
-
             return False
-        if not np.array_equal(self.upper_sequence.antecedent[2:],self.lower_sequence.antecedent[1:]):
 
+        if not np.array_equal(self.upper_sequence.antecedent[2:],self.lower_sequence.antecedent[1:]): #???
             return False
+
         if not np.array_equal(self.upper_sequence.succedent,self.lower_sequence.succedent):
             print(23)
             return False
@@ -191,11 +191,72 @@ class Inference:
         A = self.upper_sequence.antecedent[0]
         B = self.upper_sequence.antecedent[1]
         A_and_B = self.lower_sequence.antecedent[0]
-        if A!=A_and_B.formula_pos[0][0][0]:
+        if A != A_and_B.formula_pos[0][0][0]:
             return False
-        if B!=A_and_B.formula_pos[0][0][1]:
+        if B != A_and_B.formula_pos[0][0][1]:
             return False
-        if A_and_B.connectives_pos[0][0]==l_and and A_and_B.connectives_pos[1][0] == 1:
+        if A_and_B.connectives_pos[0][0] == l_and and A_and_B.connectives_pos[1][0] == 1:
+            return True
+        return False
+
+    def check_and_right(self):
+        if isinstance(self.upper_sequence,Sequence):
+
+            return False
+
+        first_upper = self.upper_sequence[0]
+        second_upper = self.upper_sequence[1]
+        lower = self.lower_sequence
+
+        if first_upper.succedent[:-2].all() != second_upper.succedent[:-2].all():
+            return False
+
+        if first_upper.antecedent.all() != second_upper.antecedent.all():
+            return False
+
+        if first_upper.succedent[:-2].all() != lower.succedent[:-2].all():
+            return False
+
+        if first_upper.antecedent.all() != lower.antecedent.all():
+            return False
+
+        A = first_upper.succedent[-1]
+        B = second_upper.succedent[-1]
+        A_and_B = lower.succedent[-1]
+
+        if A != A_and_B.formula_pos[0][0][0]:
+            return False
+
+        if B != A_and_B.formula_pos[0][0][1]:
+            return False
+
+        if A_and_B.connectives_pos[0][0] != l_and and A_and_B.connectives_pos[1][0] == 1: #???
+            return False
+
+        return True
+
+    def check_or_right(self):
+        if len(self.upper_sequence.antecedent) != len(self.lower_sequence.antecedent): 
+            return False
+
+        if len(self.upper_sequence.succedent) != len(self.lower_sequence.succedent)+1: #???
+            return False
+
+        if not np.array_equal(self.upper_sequence.succedent[:-3],self.lower_sequence.succedent[:-2]): #???
+            return False
+
+        if not np.array_equal(self.upper_sequence.antecedent,self.lower_sequence.antecedent):
+            print(23)
+            return False
+
+        A = self.upper_sequence.succedent[-2]
+        B = self.upper_sequence.succedent[-1]
+        A_or_B = self.lower_sequence.succedent[-1]
+        if A != A_or_B.formula_pos[0][0][0]:
+            return False
+        if B != A_or_B.formula_pos[0][0][1]:
+            return False
+        if A_or_B.connectives_pos[0][0] == l_or: #and A_and_B.connectives_pos[1][0] == 1: #???
             return True
         return False
 
@@ -270,3 +331,27 @@ class Inference:
             return False
 
         return True
+
+    def check_implication_right(self):
+        if len(self.upper_sequence.antecedent) != len(self.lower_sequence.antecedent)+1:
+            return False
+        if len(self.upper_sequence.succedent) != len(self.lower_sequence.succedent):
+            return False
+        if not np.array_equal(self.upper_sequence.succedent[:-1], self.lower_sequence.succedent[:-1]):
+            return False
+        if not np.array_equal(self.upper_sequence.antecedent[1:], self.lower_sequence.antecedent):
+            return False
+
+        A = self.upper_sequence.antecedent[0]
+        B = self.upper_sequence.succedent[-1]
+        A_imp_B = self.lower_sequence.succedent[-1]
+
+        if A != A_imp_B.formula_pos[0][0][0]:
+            return False
+
+        if B != A_imp_B.formula_pos[0][0][1]:
+            return False
+
+        if A_imp_B.connectives_pos[0][0] != l_implication:
+            return False
+        return False
