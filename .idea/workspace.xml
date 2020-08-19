@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a41f3c7d-0abc-4950-808c-770a5db77055" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/danie.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FOL/.idea/FOL.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FOL/Helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Course_Work.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Course_Work.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inference.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,20 +29,116 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ZBook\Desktop\University\Course_Work" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.Proof Experiment A or not A">
+    <configuration name="InferenceCheck" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Course_Work" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FOL" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FOL/InferenceCheck.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Course_Work" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FOL" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FOL/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Proof Experiment A or not A" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Course_Work" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FOL" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FOL/Proof Experiment A or not A.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Proof Experiment with Quantifiers" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Course_Work" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FOL" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FOL/Proof Experiment with Quantifiers.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Course_Work" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -50,6 +151,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -61,6 +163,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Proof Experiment A or not A" />
+        <item itemvalue="Python.Proof Experiment with Quantifiers" />
+        <item itemvalue="Python.InferenceCheck" />
+        <item itemvalue="Python.Main" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -75,6 +181,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581860207265</updated>
+      <workItem from="1589624526995" duration="330000" />
+      <workItem from="1589624866185" duration="234000" />
+      <workItem from="1589625780006" duration="10826000" />
+      <workItem from="1589716521198" duration="6085000" />
+      <workItem from="1589799781510" duration="11077000" />
+      <workItem from="1590665733833" duration="30000" />
     </task>
     <servers />
   </component>
@@ -87,46 +199,103 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1718" height="308" key="GridCell.Tab.0.bottom" timestamp="1582826060751">
+    <state x="650" y="215" key="FileChooserDialogImpl" timestamp="1588854364443">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state width="1718" height="308" key="GridCell.Tab.0.bottom/0.0.1739.939@0.0.1739.939" timestamp="1582826060751" />
-    <state width="1718" height="308" key="GridCell.Tab.0.center" timestamp="1582826060751">
+    <state x="650" y="215" key="FileChooserDialogImpl/0.0.1739.939@0.0.1739.939" timestamp="1588854364443" />
+    <state width="1696" height="275" key="GridCell.Tab.0.bottom" timestamp="1589818420417">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state width="1718" height="308" key="GridCell.Tab.0.center/0.0.1739.939@0.0.1739.939" timestamp="1582826060751" />
-    <state width="1718" height="308" key="GridCell.Tab.0.left" timestamp="1582826060751">
+    <state width="1696" height="275" key="GridCell.Tab.0.bottom/0.0.1739.939@0.0.1739.939" timestamp="1589818420417" />
+    <state width="1696" height="275" key="GridCell.Tab.0.center" timestamp="1589818420417">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state width="1718" height="308" key="GridCell.Tab.0.left/0.0.1739.939@0.0.1739.939" timestamp="1582826060751" />
-    <state width="1718" height="308" key="GridCell.Tab.0.right" timestamp="1582826060751">
+    <state width="1696" height="275" key="GridCell.Tab.0.center/0.0.1739.939@0.0.1739.939" timestamp="1589818420417" />
+    <state width="1696" height="275" key="GridCell.Tab.0.left" timestamp="1589818420417">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state width="1718" height="308" key="GridCell.Tab.0.right/0.0.1739.939@0.0.1739.939" timestamp="1582826060751" />
-    <state width="1718" height="308" key="GridCell.Tab.1.bottom" timestamp="1582826062243">
+    <state width="1696" height="275" key="GridCell.Tab.0.left/0.0.1739.939@0.0.1739.939" timestamp="1589818420417" />
+    <state width="1696" height="275" key="GridCell.Tab.0.right" timestamp="1589818420417">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state width="1718" height="308" key="GridCell.Tab.1.bottom/0.0.1739.939@0.0.1739.939" timestamp="1582826062243" />
-    <state width="1718" height="308" key="GridCell.Tab.1.center" timestamp="1582826062243">
+    <state width="1696" height="275" key="GridCell.Tab.0.right/0.0.1739.939@0.0.1739.939" timestamp="1589818420417" />
+    <state width="1696" height="275" key="GridCell.Tab.1.bottom" timestamp="1589818420417">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state width="1718" height="308" key="GridCell.Tab.1.center/0.0.1739.939@0.0.1739.939" timestamp="1582826062243" />
-    <state width="1718" height="308" key="GridCell.Tab.1.left" timestamp="1582826062243">
+    <state width="1696" height="275" key="GridCell.Tab.1.bottom/0.0.1739.939@0.0.1739.939" timestamp="1589818420417" />
+    <state width="1696" height="275" key="GridCell.Tab.1.center" timestamp="1589818420417">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state width="1718" height="308" key="GridCell.Tab.1.left/0.0.1739.939@0.0.1739.939" timestamp="1582826062243" />
-    <state width="1718" height="308" key="GridCell.Tab.1.right" timestamp="1582826062243">
+    <state width="1696" height="275" key="GridCell.Tab.1.center/0.0.1739.939@0.0.1739.939" timestamp="1589818420417" />
+    <state width="1696" height="275" key="GridCell.Tab.1.left" timestamp="1589818420417">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state width="1718" height="308" key="GridCell.Tab.1.right/0.0.1739.939@0.0.1739.939" timestamp="1582826062243" />
-    <state x="381" y="116" key="SettingsEditor" timestamp="1582658990816">
+    <state width="1696" height="275" key="GridCell.Tab.1.left/0.0.1739.939@0.0.1739.939" timestamp="1589818420417" />
+    <state width="1696" height="275" key="GridCell.Tab.1.right" timestamp="1589818420417">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state x="381" y="116" key="SettingsEditor/0.0.1739.939@0.0.1739.939" timestamp="1582658990816" />
-    <state x="578" y="298" key="com.intellij.ide.util.TipDialog" timestamp="1582824920423">
+    <state width="1696" height="275" key="GridCell.Tab.1.right/0.0.1739.939@0.0.1739.939" timestamp="1589818420417" />
+    <state x="381" y="116" key="SettingsEditor" timestamp="1589624952000">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state x="578" y="298" key="com.intellij.ide.util.TipDialog/0.0.1739.939@0.0.1739.939" timestamp="1582824920423" />
+    <state x="381" y="116" key="SettingsEditor/0.0.1739.939@0.0.1739.939" timestamp="1589624952000" />
+    <state width="876" height="477" key="XDebugger.FullValuePopup" timestamp="1589036426451">
+      <screen x="0" y="0" width="1739" height="939" />
+    </state>
+    <state width="876" height="477" key="XDebugger.FullValuePopup/0.0.1739.939@0.0.1739.939" timestamp="1589036426451" />
+    <state x="578" y="298" key="com.intellij.ide.util.TipDialog" timestamp="1589450874195">
+      <screen x="0" y="0" width="1739" height="939" />
+    </state>
+    <state x="578" y="298" key="com.intellij.ide.util.TipDialog/0.0.1739.939@0.0.1739.939" timestamp="1589450874195" />
+    <state x="1115" y="392" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588943775335">
+      <screen x="0" y="0" width="1739" height="939" />
+    </state>
+    <state x="1115" y="392" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1739.939@0.0.1739.939" timestamp="1588943775335" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1589624826139">
+      <screen x="0" y="0" width="1739" height="939" />
+    </state>
+    <state width="600" height="428" key="javadoc.popup/0.0.1739.939@0.0.1739.939" timestamp="1589624826139" />
+    <state x="532" y="200" width="672" height="678" key="search.everywhere.popup" timestamp="1589624915509">
+      <screen x="0" y="0" width="1739" height="939" />
+    </state>
+    <state x="532" y="200" width="672" height="678" key="search.everywhere.popup/0.0.1739.939@0.0.1739.939" timestamp="1589624915509" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FOL/Proof Experiment with Quantifiers.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FOL/InferenceCheck.py</url>
+          <line>299</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FOL/Proof Experiment A or not A.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/$Proof_Experiment_A_or_not_A.coverage" NAME="Proof Experiment A or not A Coverage Results" MODIFIED="1589815918808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FOL" />
+    <SUITE FILE_PATH="coverage/$InferenceCheck.coverage" NAME="InferenceCheck Coverage Results" MODIFIED="1589642883153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FOL" />
+    <SUITE FILE_PATH="coverage/$Proof_Experiment_with_Quantifiers.coverage" NAME="Proof Experiment with Quantifiers Coverage Results" MODIFIED="1589809469094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FOL" />
+    <SUITE FILE_PATH="coverage/$Main.coverage" NAME="Main Coverage Results" MODIFIED="1589637168230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FOL" />
   </component>
 </project>

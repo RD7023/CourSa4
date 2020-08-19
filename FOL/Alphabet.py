@@ -1,0 +1,16 @@
+l_not = '¬'
+l_or = '∨'
+l_and = '∧'
+# l_equiv = '↔'
+l_implication = '→'
+l_inference = '⊢'
+q_universal = '∀'
+q_existential = '∃'
+index_symbols = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+variable_symbols = ['x', 'y', 'z']
+constant_symbols = ['a', 'b', 'c']
+function_symbols = ['f', 'g', 'h', 't']
+predicate_symbols = ['P', 'Q', 'R']
+logical_symbols = [l_and, l_implication, l_not, l_or]
+logical_symbols_binary = [l_and, l_implication, l_or]
+quantifier_symbols = [q_universal, q_existential]
